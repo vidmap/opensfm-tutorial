@@ -22,6 +22,7 @@ To see the 3D reconstruction in your browser, copy and paste the following into 
 
 `http://localhost:8000/viewer/reconstruction.html#file=/data/berlin/reconstruction.meshed.json`
 
+In the future, to run opensfm on your own images, simply replace berlin with the name of the folder where you've stored your images.
 # Important Operations
 ### Commits
 Remember to always commit any changes you've made to the docker container if you don't want to lose information. This can be done with the following command, where `IMAGE` is the title of the image you want to save these commits to:
