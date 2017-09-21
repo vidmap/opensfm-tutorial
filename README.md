@@ -27,7 +27,7 @@ To see the 3D reconstruction in your browser, copy and paste the following into 
 Remember to always commit any changes you've made to the docker container if you don't want to lose information. This can be done with the following command, where `IMAGE` is the title of the image you want to save these commits to:
 
 `sudo docker commit CONTAINER_ID IMAGE(Ex: awkbr549/opensfm)`
-### Returning to a Particular Docker Instance
+### Returning to a Docker Container
 To see all docker instances, including ones that aren't currently running, type:
 
 `sudo docker ps -a`
@@ -61,3 +61,6 @@ If you get libdc1394 error: Failed to initialize libdc1394, run:
 `sudo ln /dev/null /dev/raw1394`
 
 Also make sure that in your folder containing images to test in the `data` folder, your images are container within a folder named `images`, and you include a `config.yaml` file.
+
+### Tidbits
+Remember that a docker container is not the same thing as a docker image. A docker container can be thought of as an instance of a docker image, and when you enter a docker container, make sure not to confuse the container ID with the image ID. Both look like random strings, but are different. You cannot copy files to a docker image, but you can to a docker container. Any major changes made to a docker container should be committed to a docker image.
