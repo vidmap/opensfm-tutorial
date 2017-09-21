@@ -3,12 +3,12 @@ How to set up opensfm on any computer through docker.
 First, to download from Docker, run:
 
 `sudo docker pull awkbr549/opensfm`
-## Running OpenSfM on localhost
+# Running OpenSfM on localhost
 To expose the Docker container's port 8000 to localhost, run:
 
 `sudo docker run -it --expose 8000 -p 8000:8000 awkbr549/opensfm`
 
-This will start an instance of the awkbr549/opensfm container, and this instance number should show up after root@. Save the id after root@ somewhere so when we exit the docker container, we can go back to the exact same version of the container.
+This will start an instance of the awkbr549/opensfm container, and this instance number should show up after root@ in the command line. Save the id after root@ somewhere so when we exit the docker container, we can go back to the exact same version of the container.
 
 To run the reconstruction of an example set of images in `data/berlin`, go to the root of the project `/source/OpenSfM` and run:
 
@@ -22,6 +22,11 @@ To see the 3D reconstruction in your browser, copy and paste the following into 
 
 `http://localhost:8000/viewer/reconstruction.html#file=/data/berlin/reconstruction.meshed.json`
 
+# Important Operations
+# Commits
+Remember to always commit any changes you've made to the docker container if you don't want to lose information. This can be done with the following command, where "IMAGE" is the title of the container you want to save these commits to:
+
+`sudo docker commit IMAGE_ID IMAGE(Ex: awkbr549/opensfm)`
 ### Reentering opensfm
 
 `sudo docker start BLANK(id goes here)`
@@ -37,10 +42,6 @@ After running the command above, enter any key to continue(run things on localho
 
 `sudo docker cp PATH_TO_FILE ID_GOES_HERE: PATH_TO_DESTINATION`
 
-
-### Save your edits in your docker container
-
-`sudo docker commit IMAGE_ID IMAGE(Ex: awkbr549/opensfm)
 
 ## Other commands
 
