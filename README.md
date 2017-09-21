@@ -41,12 +41,15 @@ After starting that docker image, we want to attach to it with:
 
 Now you are running this particular docker image. If for some reason, the terminal looks like it is still loading the image, just press any key to continue.
 
-### Moving things from outside into docker containers
+### Moving files from host computer into docker
+To move files from your host computer into docker, type the following command, replacing `HOST_FILE_PATH` with the path to your file on your host computer, `IMAGE_ID` with your docker destination ID, and `PATH_TO_DESTINATION` with the path to your destination inside your docker folder.
 
-`sudo docker cp PATH_TO_FILE ID_GOES_HERE: PATH_TO_DESTINATION`
+In our particular instance, we want to move any images into the `data` folder. Therefore `PATH_TO_DESTINATION` should be `/source/OpenSfM/data/`.
 
+`sudo docker cp HOST_FILE_PATH IMAGE_ID: PATH_TO_DESTINATION`
 
-## Other commands
+### Other
+
 
 To see all your current images and find Image IDs
 
