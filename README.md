@@ -52,4 +52,12 @@ To see all your current images and find Image IDs
 ` sudo docker images
 
 
+### Potential errors
+
+For this error:
+
+libdc1394 error: Failed to initialize libdc1394, run
+
+`sudo ln /dev/null /dev/raw1394
+
 
