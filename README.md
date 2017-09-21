@@ -24,14 +24,19 @@ To see the 3D reconstruction in your browser, copy and paste the following into 
 
 # Important Operations
 ### Commits
-Remember to always commit any changes you've made to the docker container if you don't want to lose information. This can be done with the following command, where "IMAGE" is the title of the container you want to save these commits to:
+Remember to always commit any changes you've made to the docker container if you don't want to lose information. This can be done with the following command, where `IMAGE` is the title of the image you want to save these commits to:
 
-`sudo docker commit IMAGE_ID IMAGE(Ex: awkbr549/opensfm)`
+`sudo docker commit CONTAINER_ID IMAGE(Ex: awkbr549/opensfm)`
 ### Returning to a Particular Docker Instance
 To see all docker instances, including ones that aren't currently running, type:
+
 `sudo docker ps -a`
 
-To enter any particular container, use the following command, replacing BLANK for the docker image ID:
+To see the list of all your docker images, type:
+
+`sudo docker images`
+
+To enter any particular container, use the following command, replacing BLANK for the docker container ID:
 
 `sudo docker start BLANK(id goes here)`
 
@@ -42,21 +47,14 @@ After starting that docker image, we want to attach to it with:
 Now you are running this particular docker image. If for some reason, the terminal looks like it is still loading the image, just press any key to continue.
 
 ### Moving files from host computer into docker
-To move files from your host computer into docker, type the following command, replacing `HOST_FILE_PATH` with the path to your file on your host computer, `IMAGE_ID` with your docker destination ID, and `PATH_TO_DESTINATION` with the path to your destination inside your docker folder.
+To move files from your host computer into docker, type the following command, replacing `HOST_FILE_PATH` with the path to your file on your host computer, `CONTAINER_ID` with your docker container ID, and `PATH_TO_DESTINATION` with the path to your destination inside your docker folder.
 
 In our particular instance, we want to move any images into the `data` folder. Therefore `PATH_TO_DESTINATION` should be `/source/OpenSfM/data/`.
 
-`sudo docker cp HOST_FILE_PATH IMAGE_ID: PATH_TO_DESTINATION`
+`sudo docker cp HOST_FILE_PATH CONTAINER_ID: PATH_TO_DESTINATION`
 
 ### Other
-
-
-To see all your current images and find Image IDs
-
-`sudo docker images`
-
-
-## Potential Errors
+# Potential Errors
 
 for libdc1394 error: Failed to initialize libdc1394, run:
 
