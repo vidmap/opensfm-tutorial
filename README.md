@@ -26,7 +26,9 @@ Start the http server
 
 `python -m SimpleHTTPServer`
 
-Go to [this link](http://localhost:8000/viewer/reconstruction.html#file=/data/DATASET_NAME/reconstruction.meshed.json) to check out the reconstruction
+Go to [this link](http://localhost:8000/viewer/reconstruction.html#file=/data/berlin/reconstruction.meshed.json) to check out the reconstruction
+
+In the future, change the path data/berlin in the uri to other paths.
 
 
 ### Reentering opensfm
