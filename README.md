@@ -1,29 +1,28 @@
 # opensfm-tutorial
 How to set up opensfm on any computer through docker.
 First, to download from Docker, run:
+
 `sudo docker pull awkbr549/opensfm`
-## Run OpenSfM on localhost
-
-## First time using opensfm within the docker container
-
-Run this command to enter your docker container:
+## Running OpenSfM on localhost
+To expose the Docker container's port 8000 to localhost, run:
 
 `sudo docker run -it --expose 8000 -p 8000:8000 awkbr549/opensfm`
 
+This will start an instance of the awkbr549/opensfm container, and this instance number should show up after root@.
+
 Save the id after root@ somewhere so when we exit the docker container, we can go back to the exact same version of the container.
 
-Go to the root of the project(OpenSfm) and run
+To run the reconstruction of an example set of images in `data/berlin`, go to the root of the project `/source/OpenSfM` and run:
 
 `./bin/run_all data/berlin`
 
-Start the http server
+Then, run the following command to start the python server:
 
 `python -m SimpleHTTPServer`
 
-Go to [this link](http://localhost:8000/viewer/reconstruction.html#file=/data/berlin/reconstruction.meshed.json) to check out the reconstruction
+To see the 3D reconstruction in your browser, copy and paste this link:
 
-In the future, change the path data/berlin to other paths.
-
+`http://localhost:8000/viewer/reconstruction.html#file=/data/berlin/reconstruction.meshed.json`
 
 ### Reentering opensfm
 
