@@ -28,7 +28,7 @@ Start the http server
 
 Go to [this link](http://localhost:8000/viewer/reconstruction.html#file=/data/berlin/reconstruction.meshed.json) to check out the reconstruction
 
-In the future, change the path data/berlin in the uri to other paths.
+In the future, change the path data/berlin to other paths.
 
 
 ### Reentering opensfm
@@ -47,14 +47,18 @@ After running the command above, enter any key to continue(run things on localho
 `sudo docker cp PATH_TO_FILE ID_GOES_HERE: PATH_TO_DESTINATION`
 
 
-### Other commands
+###Save your edits in your docker container
+
+`sudo docker commit IMAGE_ID IMAGE(Ex: awkbr549/opensfm)
+
+## Other commands
 
 To see all your current images and find Image IDs
 
 `sudo docker images`
 
 
-### Potential errors
+## Potential errors
 
 For this error:
 
