@@ -1,12 +1,7 @@
 # opensfm-tutorial
 How to set up opensfm on any computer through docker.
-
-## Download from docker
-
-Click [here](https://hub.docker.com/r/awkbr549/opensfm/) and run command
-
+First, to download from Docker, run:
 `sudo docker pull awkbr549/opensfm`
-
 ## Run OpenSfM on localhost
 
 ## First time using opensfm within the docker container
