@@ -1,6 +1,6 @@
 # opensfm-tutorial
 How to set up opensfm on any computer through docker.
-First, to download from Docker, run:
+First, to download a prebuilt image containing opensfm from Docker, run:
 
 `sudo docker pull awkbr549/opensfm`
 # Running OpenSfM on localhost
@@ -8,7 +8,7 @@ To expose the Docker container's port 8000 to localhost, run:
 
 `sudo docker run -it --expose 8000 -p 8000:8000 awkbr549/opensfm`
 
-This will start an instance of the awkbr549/opensfm container, and this instance number should show up after root@ in the command line. Save the id after root@ somewhere so when we exit the docker container, we can go back to the exact same version of the container.
+This will start a container of the awkbr549/opensfm image, and the container ID should show up after root@ in the command line. Save this id after root@ somewhere so when we exit the docker container, we can return to this container.
 
 To run the reconstruction of an example set of images in `data/berlin`, go to the root of the project `/source/OpenSfM` and run:
 
@@ -51,13 +51,13 @@ To move files from your host computer into docker, type the following command, r
 
 In our particular instance, we want to move any images into the `data` folder. Therefore `PATH_TO_DESTINATION` should be `/source/OpenSfM/data/`.
 
-`sudo docker cp HOST_FILE_PATH CONTAINER_ID: PATH_TO_DESTINATION`
+`sudo docker cp HOST_FILE_PATH CONTAINER_ID:PATH_TO_DESTINATION`
 
-### Other
-# Potential Errors
+# Other
+### Potential Errors
 
-for libdc1394 error: Failed to initialize libdc1394, run:
+If you get libdc1394 error: Failed to initialize libdc1394, run:
 
 `sudo ln /dev/null /dev/raw1394`
 
-
+Also make sure that in your folder containing images to test in the `data` folder, your images are container within a folder named `images`, and you include a `config.yaml` file.
