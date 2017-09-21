@@ -1,5 +1,5 @@
 # opensfm-tutorial
-how to set up opensfm
+How to set up opensfm on any computer through docker.
 
 ## Download from docker
 
@@ -7,12 +7,11 @@ Click [here](https://hub.docker.com/r/awkbr549/opensfm/) and run command
 
 `sudo docker pull awkbr549/opensfm`
 
+## Run OpenSfM on localhost
 
-## Run OpenSfM on localhost(using the example dataset called berlin)
+## First time using opensfm within the docker container
 
-### First time using opensfm within the docker container
-
-Run this command to enter your docker container
+Run this command to enter your docker container:
 
 `sudo docker run -it --expose 8000 -p 8000:8000 awkbr549/opensfm`
 
@@ -20,7 +19,7 @@ Save the id after root@ somewhere so when we exit the docker container, we can g
 
 Go to the root of the project(OpenSfm) and run
 
-`bin/run_all data/berlin`
+`./bin/run_all data/berlin`
 
 Start the http server
 
@@ -47,7 +46,7 @@ After running the command above, enter any key to continue(run things on localho
 `sudo docker cp PATH_TO_FILE ID_GOES_HERE: PATH_TO_DESTINATION`
 
 
-###Save your edits in your docker container
+### Save your edits in your docker container
 
 `sudo docker commit IMAGE_ID IMAGE(Ex: awkbr549/opensfm)
 
@@ -58,11 +57,9 @@ To see all your current images and find Image IDs
 `sudo docker images`
 
 
-## Potential errors
+## Potential Errors
 
-For this error:
-
-libdc1394 error: Failed to initialize libdc1394, run
+for libdc1394 error: Failed to initialize libdc1394, run:
 
 `sudo ln /dev/null /dev/raw1394`
 
