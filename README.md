@@ -23,20 +23,23 @@ To see the 3D reconstruction in your browser, copy and paste the following into 
 `http://localhost:8000/viewer/reconstruction.html#file=/data/berlin/reconstruction.meshed.json`
 
 # Important Operations
-# Commits
+### Commits
 Remember to always commit any changes you've made to the docker container if you don't want to lose information. This can be done with the following command, where "IMAGE" is the title of the container you want to save these commits to:
 
 `sudo docker commit IMAGE_ID IMAGE(Ex: awkbr549/opensfm)`
-### Reentering opensfm
+### Returning to a Particular Docker Instance
+To see all docker instances, including ones that aren't currently running, type:
+`sudo docker ps -a`
+
+To enter any particular container, use the following command, replacing BLANK for the docker image ID:
 
 `sudo docker start BLANK(id goes here)`
 
-After starting that docker image, we want to attach to it:
+After starting that docker image, we want to attach to it with:
 
 `sudo docker attach BLANK(same id)`
 
-After running the command above, enter any key to continue(run things on localhost etc.).
-
+Now you are running this particular docker image. If for some reason, the terminal looks like it is still loading the image, just press any key to continue.
 
 ### Moving things from outside into docker containers
 
