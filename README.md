@@ -2,6 +2,7 @@
 How to set up opensfm on any computer through docker.
 ### Install docker
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04
+
 First, to download a prebuilt image containing opensfm from Docker, run:
 
 `sudo docker pull awkbr549/opensfm`
